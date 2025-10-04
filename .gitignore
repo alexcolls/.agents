@@ -205,3 +205,58 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ============================================================================
+# Project-Specific: WhatsApp Video to Social Media Agent
+# ============================================================================
+
+# Agent storage directory (contains encrypted credentials and temp files)
+.agents/
+!.agents/.gitkeep
+
+# Environment configuration (contains secrets)
+.env
+.env.local
+.env.*.local
+
+# Log files
+*.log
+logs/
+
+# Session data
+sessions/
+*.session
+*.session-journal
+
+# WhatsApp authentication
+whatsapp_sessions/
+*.qr.png
+
+# Downloaded videos (temporary)
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+downloads/
+
+# Database files
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Docker build artifacts
+.agents/build/
+*.tar
+
+# Poetry local config
+poetry.toml
+
+# IDE specific
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
