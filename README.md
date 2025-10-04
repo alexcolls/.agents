@@ -570,6 +570,20 @@ Agent configurations are stored in `.src/*.json` with this structure:
 
 ---
 
+## 📚 Documentation
+
+For detailed guides and documentation:
+
+- 📖 [**QUICKSTART.md**](docs/QUICKSTART.md) - Get started in 5 minutes
+- 🎯 [**START_HERE.md**](docs/START_HERE.md) - Complete beginner's guide
+- 💡 [**BEGINNER_TIPS.md**](docs/BEGINNER_TIPS.md) - Tips for new users
+- 📦 [**INSTALLATION_FILES.md**](docs/INSTALLATION_FILES.md) - Detailed installation guide
+- 🎬 [**INSTALLATION_DEMO.md**](docs/INSTALLATION_DEMO.md) - Visual installation walkthrough
+- 📋 [**CHANGELOG.md**](CHANGELOG.md) - Version history and changes
+- 🤝 [**CONTRIBUTING.md**](CONTRIBUTING.md) - How to contribute
+
+---
+
 ## 🛠️ Development
 
 ### Setting Up Development Environment
@@ -592,14 +606,20 @@ pre-commit install
 ### Running Tests
 
 ```bash
-# Run all tests
+# Run the complete test suite with beautiful output
+./test.sh
+
+# Or run with Poetry directly
 poetry run pytest
 
 # Run with coverage
-poetry run pytest --cov=agents --cov-report=html
+poetry run pytest --cov=src --cov-report=html
 
 # Run specific test file
 poetry run pytest tests/test_agent.py
+
+# Run only unit tests
+poetry run pytest -m unit
 ```
 
 ### Code Quality
@@ -645,7 +665,7 @@ poetry run mypy src/
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines.
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ### Quick Contribution Guide
 
