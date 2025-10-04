@@ -1,0 +1,119 @@
+version: '3.8'
+
+services:
+  agents:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: agents:latest
+    container_name: agents
+    restart: unless-stopped
+    
+    # Environment variables (customize in .env file)
+    env_file:
+      - .env
+    
+    # Volumes for persistent data
+    volumes:
+      # Agent configurations
+      - ./data/agents:/data/agents
+      
+      # Logs
+      - ./data/logs:/data/logs
+      
+      # Temporary files (videos, etc.)
+      - ./data/tmp:/data/tmp
+      
+      # Session files (WhatsApp, Instagram)
+      - ./data/sessions:/data/sessions
+    
+    # Network mode (can be changed based on requirements)
+    network_mode: bridge
+    
+    # Resource limits (adjust based on your needs)
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    
+    # Healthcheck
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    
+    # Labels for organization
+    labels:
+      - "com.agents.description=Social Media Automation"
+      - "com.agents.version=0.9.9"
+    
+    # Interactive mode (for CLI)
+    stdin_open: true
+    tty: true
+    
+    # Command (can be overridden)
+    # Default is interactive mode
+    # Override with: docker-compose run agents start
+    command: []
+
+# Optional: separate service for running specific agents
+  agent-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: agents:latest
+    container_name: agents-worker
+    restart: unless-stopped
+    
+    env_file:
+      - .env
+    
+    volumes:
+      - ./data/agents:/data/agents
+      - ./data/logs:/data/logs
+      - ./data/tmp:/data/tmp
+      - ./data/sessions:/data/sessions
+    
+    # Run specific agent (set AGENT_NAME in .env)
+    command: ["start"]
+    
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    
+    # Depends on main service
+    depends_on:
+      - agents
+    
+    # This service is disabled by default
+    # Enable with: docker-compose up agent-worker
+    profiles:
+      - worker
+
+# Volume definitions
+volumes:
+  agent_data:
+    driver: local
+  agent_logs:
+    driver: local
+  agent_tmp:
+    driver: local
+  agent_sessions:
+    driver: local
+
+# Network definitions (optional)
+networks:
+  default:
+    name: agents_network
+    driver: bridge
