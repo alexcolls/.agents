@@ -33,6 +33,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 🧹 Added InputSanitizer to prevent injection attacks
 - 🔍 Video URL detection and platform identification
 - 📁 Path traversal prevention and filename sanitization
+- 🎨 Created `cli/ascii_art.py` with retro ASCII art and styling
+- 💎 Designed custom .AGENTS logo with proper ASCII dot
+- 🌟 Multiple logo styles: default, compact, minimal
+- ✨ Success, error, and welcome banner ASCII art
+- 📦 Progress bars, boxes, and table formatting utilities
+- 💠 Platform and status icons for visual feedback
+- 🎥 Typing animation effect for retro feel
 
 ### 🔄 Changed
 - 🏷️ Rebranded project to `.agents` for cleaner naming
