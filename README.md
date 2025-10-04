@@ -14,7 +14,7 @@
 
 ## 🚀 **NEW: Super Easy Installation for Beginners!**
 
-**Just want to get started quickly?** Check out our [**QUICKSTART.md**](QUICKSTART.md) guide!
+**Just want to get started quickly?** Check out our [**QUICKSTART.md**](docs/QUICKSTART.md) guide!
 
 ```bash
 ./install.sh  # That's it! The installer does everything for you
@@ -645,7 +645,7 @@ poetry run mypy src/
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+We welcome contributions! Please see [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines.
 
 ### Quick Contribution Guide
 

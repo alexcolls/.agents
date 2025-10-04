@@ -199,6 +199,60 @@ git commit -m "🔧 chore: Update dependencies"
 All new features must include tests:
 
 ```bash
+# Run test suite
+./test.sh
+
+# Or run specific tests
+poetry run pytest tests/test_agent.py
+
+# Run tests with coverage
+poetry run pytest --cov=src --cov-report=html
+
+# Run only unit tests
+poetry run pytest -m unit
+```
+
+**Test Guidelines:**
+- Write unit tests for all new functions/classes
+- Aim for >80% code coverage
+- Use fixtures in `conftest.py` for common test setup
+- Mark tests with appropriate pytest markers (`@pytest.mark.unit`, etc.)
+- Include docstrings explaining what each test validates
+
+**Test Structure:**
+```python
+class TestYourFeature:
+    """Test suite for your feature"""
+    
+    def test_basic_functionality(self):
+        """Test basic functionality works"""
+        result = your_function()
+        assert result is not None
+    
+    def test_error_handling(self):
+        """Test error cases are handled properly"""
+        with pytest.raises(ValueError):
+            your_function(invalid_input)
+```
+
+**Running the Test Suite:**
+
+We provide a comprehensive test runner:
+
+```bash
+# Run all tests with beautiful output
+./test.sh
+```
+
+The test runner will:
+- ✅ Check dependencies
+- 🧪 Run unit tests
+- 📊 Generate coverage reports
+- 🎨 Display results with colored output
+
+Make sure **ALL TESTS PASS** before submitting your PR!
+
+```bash
 # Run tests
 poetry run pytest
 
