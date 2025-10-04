@@ -19,6 +19,7 @@ Welcome! This guide will help you install and run `.agents` even if you've never
 **"What's a terminal?"** → It's a black window where you type commands.
 
 **How to open:**
+
 - **Linux/Ubuntu**: Press `Ctrl + Alt + T`
 - **macOS**: Press `Cmd + Space`, type "Terminal", press Enter
 - **Windows**: Install [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install) first, then use Ubuntu
@@ -50,6 +51,7 @@ Just type this and press Enter:
 ```
 
 **That's it!** The installer will:
+
 - ✅ Check if you have Python (install it if needed)
 - ✅ Install Poetry (package manager)
 - ✅ Install all required libraries
@@ -89,16 +91,19 @@ Or if you installed globally:
 Before running, you **must** set your master password:
 
 1. Open the configuration file:
+
    ```bash
    nano .env
    ```
 
 2. Find this line:
+
    ```
    MASTER_PASSWORD=please-change-this-to-a-very-secure-password-at-least-20-characters
    ```
 
 3. Change it to your own secure password:
+
    ```
    MASTER_PASSWORD=MyV3ryS3cur3P@ssw0rd!2025#Agents
    ```
@@ -115,11 +120,13 @@ Before running, you **must** set your master password:
 The installer offers two modes:
 
 ### 1. Developer Mode 🛠️
+
 - Full development environment
 - Includes testing tools, linters, formatters
 - **Choose this if**: You want to contribute or modify the code
 
 ### 2. User Mode 👤 (Recommended)
+
 - Minimal installation
 - Only what's needed to run the tool
 - Creates global `.agents` command
@@ -132,6 +139,7 @@ The installer offers two modes:
 ### "Permission denied" error
 
 Add execute permissions:
+
 ```bash
 chmod +x install.sh run.sh
 ```
@@ -139,11 +147,13 @@ chmod +x install.sh run.sh
 ### "Command not found" after installation
 
 Restart your terminal or run:
+
 ```bash
 source ~/.bashrc
 ```
 
 Or for macOS/zsh:
+
 ```bash
 source ~/.zshrc
 ```
@@ -153,12 +163,14 @@ source ~/.zshrc
 The tool needs Python 3.10 or higher. The installer can install it for you, or:
 
 **Ubuntu/Debian:**
+
 ```bash
 sudo apt update
 sudo apt install python3.10 python3.10-venv python3-pip
 ```
 
 **macOS:**
+
 ```bash
 brew install python@3.10
 ```
@@ -166,11 +178,13 @@ brew install python@3.10
 ### Poetry not working
 
 Make sure Poetry is in your PATH:
+
 ```bash
 export PATH="$HOME/.local/bin:$PATH"
 ```
 
 Add it permanently to your shell:
+
 ```bash
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
@@ -179,6 +193,7 @@ source ~/.bashrc
 ### Dependencies fail to install
 
 Try updating Poetry first:
+
 ```bash
 poetry self update
 poetry update
@@ -218,19 +233,18 @@ After installation:
 
 ## 📝 Quick Reference
 
-| Command | What it does |
-|---------|-------------|
-| `./install.sh` | Install the program |
-| `./run.sh` | Quick run (checks and starts) |
-| `.agents` | Run from anywhere (after install) |
-| `nano .env` | Edit configuration |
-| `poetry run python -m src.main` | Direct run |
-| `poetry install` | Reinstall dependencies |
-| `poetry update` | Update dependencies |
+| Command                         | What it does                      |
+| ------------------------------- | --------------------------------- |
+| `./install.sh`                  | Install the program               |
+| `./run.sh`                      | Quick run (checks and starts)     |
+| `.agents`                       | Run from anywhere (after install) |
+| `nano .env`                     | Edit configuration                |
+| `poetry run python -m src.main` | Direct run                        |
+| `poetry install`                | Reinstall dependencies            |
+| `poetry update`                 | Update dependencies               |
 
 ---
 
 **Made with ❤️ for beginners!**
 
 If this guide helped you, please ⭐ star the repo!
-

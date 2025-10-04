@@ -92,7 +92,7 @@ check_python() {
         PYTHON_MINOR=$(echo $PYTHON_VERSION | cut -d. -f2)
         
         if [ "$PYTHON_MAJOR" -ge 3 ] && [ "$PYTHON_MINOR" -ge 10 ]; then
-            print_success "Python $PYTHON_VERSION detected"
+            print_success "Python $PYTHON_VERSION detected ($(which python3))"
             return 0
         else
             print_warning "Python $PYTHON_VERSION found, but we need Python 3.10 or higher"
@@ -100,6 +100,17 @@ check_python() {
         fi
     else
         print_warning "Python 3 not found"
+        return 1
+    fi
+}
+
+check_poetry() {
+    if check_command poetry; then
+        POETRY_VERSION=$(poetry --version 2>&1 | grep -oP '\d+\.\d+\.\d+' | head -1)
+        print_success "Poetry $POETRY_VERSION detected ($(which poetry))"
+        return 0
+    else
+        print_warning "Poetry not found"
         return 1
     fi
 }
@@ -306,11 +317,17 @@ main() {
         fi
     fi
     
-    # Install Poetry
-    if ! check_command poetry; then
-        install_poetry
-    else
-        print_success "Poetry is already installed"
+    # Check and install Poetry
+    if ! check_poetry; then
+        print_warning "Poetry is required for dependency management"
+        read -p "Install Poetry automatically? (Y/n): " -n 1 -r
+        echo
+        if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+            install_poetry
+        else
+            print_error "Cannot continue without Poetry"
+            exit 1
+        fi
     fi
     
     # Install project dependencies

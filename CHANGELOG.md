@@ -40,6 +40,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 📦 Progress bars, boxes, and table formatting utilities
 - 💠 Platform and status icons for visual feedback
 - 🎥 Typing animation effect for retro feel
+- 📦 Enhanced install.sh with Python 3.10+ version check
+- ✅ Added Poetry version detection and path display
+- 🔧 Configured package-mode = false in pyproject.toml
+- 📝 Interactive installer with user/dev modes
+- 🌎 Multi-OS support (Ubuntu, macOS, Arch, RedHat)
 
 ### 🔄 Changed
 - 🏷️ Rebranded project to `.agents` for cleaner naming

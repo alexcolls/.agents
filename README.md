@@ -12,6 +12,27 @@
 
 ---
 
+## 🚀 **NEW: Super Easy Installation for Beginners!**
+
+**Just want to get started quickly?** Check out our [**QUICKSTART.md**](QUICKSTART.md) guide!
+
+```bash
+./install.sh  # That's it! The installer does everything for you
+```
+
+The installer will automatically:
+
+- ✅ Check and install Python if needed
+- ✅ Install all dependencies
+- ✅ Set up your environment
+- ✅ Create a global `.agents` command
+
+**Total time: 5-10 minutes** ☕
+
+---
+
+---
+
 ## ⚠️ IMPORTANT DISCLAIMER
 
 **USE AT YOUR OWN RISK!**

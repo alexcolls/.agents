@@ -1,5 +1,6 @@
 [tool.poetry]
 name = "whatsapp-social-agents"
+package-mode = false
 version = "0.1.0"
 description = "Automate social media posting by monitoring WhatsApp groups for video links"
 authors = ["Alex Colls Outumuro <alex@example.com>"]
