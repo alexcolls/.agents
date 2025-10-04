@@ -17,6 +17,7 @@
 **USE AT YOUR OWN RISK!**
 
 This tool uses **unofficial APIs and automation techniques** that may violate the Terms of Service of:
+
 - WhatsApp
 - Instagram
 - TikTok
@@ -24,6 +25,7 @@ This tool uses **unofficial APIs and automation techniques** that may violate th
 - LinkedIn
 
 **Potential Risks:**
+
 - 🚫 **Account bans** or permanent suspension
 - 🔒 **Shadowbanning** or reduced reach
 - ⚖️ **Legal consequences** for ToS violations
@@ -38,6 +40,7 @@ This tool uses **unofficial APIs and automation techniques** that may violate th
 Imagine this: You're part of multiple WhatsApp groups where people share amazing videos from Instagram, TikTok, or YouTube. Instead of manually downloading and reposting these videos to your social media accounts, this tool does it **automatically** for you!
 
 **How it works:**
+
 1. 📱 You create an "Agent" for each WhatsApp group you want to monitor
 2. 🔗 When someone shares a video link in the group (Instagram, TikTok, YouTube, LinkedIn)
 3. ⬇️ The agent automatically downloads the video
@@ -46,6 +49,7 @@ Imagine this: You're part of multiple WhatsApp groups where people share amazing
 6. 🔄 Repeats automatically every few minutes!
 
 **Perfect for:**
+
 - Content creators who curate videos from multiple sources
 - Social media managers handling multiple accounts
 - Marketers automating content distribution
@@ -56,6 +60,7 @@ Imagine this: You're part of multiple WhatsApp groups where people share amazing
 ## ✨ Features
 
 ### Current Features (v0.1.0)
+
 - 📱 **WhatsApp Group Monitoring** - Track multiple WhatsApp groups simultaneously
 - 📥 **Smart Video Downloading** - Supports Instagram, TikTok, YouTube, LinkedIn links
 - 📤 **Instagram Auto-Upload** - Automatically post videos to Instagram accounts
@@ -67,6 +72,7 @@ Imagine this: You're part of multiple WhatsApp groups where people share amazing
 - 🔒 **Security First** - Input validation, error handling, secure credential storage
 
 ### Coming Soon
+
 - 📱 TikTok auto-upload
 - 🎥 YouTube Shorts auto-upload
 - 💼 LinkedIn auto-upload
@@ -89,6 +95,7 @@ Imagine this: You're part of multiple WhatsApp groups where people share amazing
 **"What's a terminal?"** It's a black window where you type commands. Don't worry, we'll guide you!
 
 **How to open it:**
+
 - **Linux/Ubuntu**: Press `Ctrl + Alt + T`
 - **macOS**: Press `Cmd + Space`, type "Terminal", press Enter
 - **Windows**: Install [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install) first
@@ -106,12 +113,14 @@ python3 --version
 If you see something like `Python 3.10.x` or higher, you're good! If not:
 
 **Ubuntu/Debian:**
+
 ```bash
 sudo apt update
 sudo apt install python3.10 python3.10-venv python3-pip
 ```
 
 **macOS (with Homebrew):**
+
 ```bash
 brew install python@3.10
 ```
@@ -142,11 +151,13 @@ poetry --version
 Git helps you download and update the code:
 
 **Ubuntu/Debian:**
+
 ```bash
 sudo apt install git
 ```
 
 **macOS:**
+
 ```bash
 brew install git
 ```
@@ -193,6 +204,7 @@ nano .env
 ```
 
 **Change these important settings:**
+
 ```bash
 MASTER_PASSWORD=your-super-secret-password-here-make-it-long-and-random
 CHECK_INTERVAL_MINUTES=5
@@ -220,9 +232,9 @@ When you run the tool, you'll see 4 options:
 
 ```
 ╔════════════════════════════════════════════╗
-║  WhatsApp Video to Social Media Agent     ║
+║  WhatsApp Video to Social Media Agent      ║
 ║                                            ║
-║  1. 🤖 Add AGENT                          ║
+║  1. 🤖 Add AGENT                           ║
 ║  2. ⚙️  Config AGENT                       ║
 ║  3. 📊 See ACCOUNTS                        ║
 ║  4. 🚪 Exit                                ║
@@ -240,6 +252,7 @@ When you run the tool, you'll see 4 options:
 Select `Add AGENT` and follow the prompts:
 
 #### Step 1: Connect WhatsApp
+
 - A QR code will appear
 - Open WhatsApp on your phone
 - Go to Settings → Linked Devices → Link a Device
@@ -247,11 +260,13 @@ Select `Add AGENT` and follow the prompts:
 - ✅ Connected!
 
 #### Step 2: Select WhatsApp Group
+
 - You'll see a list of all your WhatsApp groups
 - Use ⬆️ ⬇️ arrows to navigate
 - Press Enter to select
 
 #### Step 3: Choose Platforms
+
 - Use Space to select platforms (Instagram, TikTok, YouTube, LinkedIn)
 - Press Enter when done
 - **For now, only Instagram is fully implemented**
@@ -271,13 +286,13 @@ For each platform you selected:
 You'll see a beautiful ASCII art celebration:
 
 ```
-   █████╗  ██████╗ ███████╗███╗   ██╗████████╗    
-  ██╔══██╗██╔════╝ ██╔════╝████╗  ██║╚══██╔══╝    
-  ███████║██║  ███╗█████╗  ██╔██╗ ██║   ██║       
-  ██╔══██║██║   ██║██╔══╝  ██║╚██╗██║   ██║       
-  ██║  ██║╚██████╔╝███████╗██║ ╚████║   ██║       
-  ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝       
-                                                    
+   █████╗  ██████╗ ███████╗███╗   ██╗████████╗
+  ██╔══██╗██╔════╝ ██╔════╝████╗  ██║╚══██╔══╝
+  ███████║██║  ███╗█████╗  ██╔██╗ ██║   ██║
+  ██╔══██║██║   ██║██╔══╝  ██║╚██╗██║   ██║
+  ██║  ██║╚██████╔╝███████╗██║ ╚████║   ██║
+  ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝
+
    ██████╗██████╗ ███████╗ █████╗ ████████╗███████╗██████╗ ██╗
   ██╔════╝██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██╔════╝██╔══██╗██║
   ██║     ██████╔╝█████╗  ███████║   ██║   █████╗  ██║  ██║██║
@@ -293,6 +308,7 @@ Your agent is now monitoring the WhatsApp group and will automatically download 
 ### 2. ⚙️ Configuring Agents
 
 Select `Config AGENT` to:
+
 - **View all agents** and their status
 - **Modify** platform/account settings
 - **Activate/Deactivate** agents temporarily
@@ -315,6 +331,7 @@ Select `See ACCOUNTS` to view a beautiful table:
 ```
 
 **Features:**
+
 - 📊 Real-time statistics
 - 📈 Sort by any column
 - 🔄 Auto-refresh every 30 seconds
@@ -430,6 +447,7 @@ Safely closes all agents and exits the program.
 ### Why Docker?
 
 Docker lets you run each agent in its own isolated container. This means:
+
 - 🔒 **Security**: Agents can't interfere with each other
 - 🚀 **Portability**: Deploy anywhere (your computer, cloud, VPS)
 - 📦 **Simplicity**: Everything packaged and ready to go
@@ -482,6 +500,7 @@ docker-compose down
 ### Encryption
 
 All sensitive data is encrypted using **AES-256** (military-grade encryption):
+
 - Social media passwords
 - Session tokens
 - API keys
@@ -579,22 +598,24 @@ poetry run mypy agents/
 
 1. Create `agents/platforms/newplatform.py`
 2. Implement the `Platform` interface:
+
    ```python
    from agents.platforms.base import Platform
-   
+
    class NewPlatform(Platform):
        def login(self, username: str, password: str) -> bool:
            """Authenticate with the platform"""
            pass
-       
+
        def upload_video(self, video_path: str, caption: str) -> bool:
            """Upload a video"""
            pass
-       
+
        def get_stats(self) -> dict:
            """Retrieve account statistics"""
            pass
    ```
+
 3. Register in `agents/platforms/__init__.py`
 4. Add tests in `tests/test_platforms.py`
 5. Update documentation
@@ -633,6 +654,7 @@ We use emojis for commit messages! Examples:
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 **What this means:**
+
 - ✅ Free to use, modify, and distribute
 - ✅ Can be used commercially
 - ✅ Must include copyright notice
@@ -656,14 +678,17 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ### Author
 
 **Alex Colls Outumuro**
+
 - GitHub: [@alexcolls](https://github.com/alexcolls)
-- Email: alex@example.com
+- Email: alexcollsoutumuro@gmail.com
 
 ### Contributors
 
-Thank you to all contributors! 🎉
+Don't be shy! DM me on [X](https://x.com/moriarsans) if you want to contribute.
 
-<!-- Add contributors here -->
+Or just send your PR. 😊
+
+Thank you to all contributors! 🎉
 
 ---
 
@@ -701,6 +726,7 @@ A: The software is free. You only pay for hosting if you deploy to a server.
 ## 🗺️ Roadmap
 
 ### Version 0.1.0 (Current) - Instagram Only
+
 - ✅ WhatsApp monitoring
 - ✅ Video downloading
 - ✅ Instagram upload
@@ -708,20 +734,24 @@ A: The software is free. You only pay for hosting if you deploy to a server.
 - ✅ Docker support
 
 ### Version 0.2.0 - TikTok Integration
+
 - ⏳ TikTok account creation
 - ⏳ TikTok video upload
 - ⏳ TikTok analytics
 
 ### Version 0.3.0 - YouTube Shorts
+
 - ⏳ YouTube authentication
 - ⏳ Shorts upload
 - ⏳ YouTube analytics
 
 ### Version 0.4.0 - LinkedIn
+
 - ⏳ LinkedIn video posts
 - ⏳ LinkedIn analytics
 
 ### Version 1.0.0 - Full Release
+
 - ⏳ Web dashboard
 - ⏳ Advanced scheduling
 - ⏳ AI-powered captions
