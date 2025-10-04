@@ -54,6 +54,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 💾 CRUD operations for agents with encryption
 - 🔒 Secure credential storage and retrieval
 - 📊 Agent status tracking and runtime state
+- 🎥 Video downloader with yt-dlp (multi-platform support)
+- 📸 Instagram platform integration with session persistence
+- 💬 WhatsApp platform integration (stub with interface)
+- 🎭 Social media orchestrator (automation engine)
+- 🎯 Complete CLI with all commands implemented
+- 🚀 Interactive and direct command modes
+- 🐳 Docker containerization with docker-compose
+- 📦 Production-ready deployment configuration
 
 ### 🔄 Changed
 - 🏷️ Rebranded project to `.agents` for cleaner naming
