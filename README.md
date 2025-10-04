@@ -350,8 +350,8 @@ Safely closes all agents and exits the program.
 ### Project Structure
 
 ```
-.agents/
-├── agents/                      # Main application package
+.src/
+├── src/                      # Main application package
 │   ├── __init__.py             # Package initialization
 │   ├── cli/                    # Command-line interface
 │   │   ├── __init__.py
@@ -382,7 +382,7 @@ Safely closes all agents and exits the program.
 │       ├── logger.py          # Logging setup
 │       ├── constants.py       # Application constants
 │       └── helpers.py         # Helper functions
-├── .agents/                     # Agent storage (git-ignored)
+├── .src/                     # Agent storage (git-ignored)
 │   ├── tmp/                    # Temporary video files
 │   ├── build/                  # Docker images per agent
 │   └── *.json                  # Agent configurations (encrypted)
@@ -426,7 +426,7 @@ Safely closes all agents and exits the program.
          │
          ▼
 ┌─────────────────┐
-│ Video Downloader│  ← Downloads video to .agents/tmp/
+│ Video Downloader│  ← Downloads video to .src/tmp/
 └────────┬────────┘
          │
          ▼
@@ -460,7 +460,7 @@ After creating an agent through the CLI, build its Docker image:
 poetry run agents build <whatsapp-group-name>
 ```
 
-This creates a Docker image in `.agents/build/<whatsapp-group-name>.agent`
+This creates a Docker image in `.src/build/<whatsapp-group-name>.agent`
 
 ### Running an Agent Container
 
@@ -516,12 +516,12 @@ The encryption key is derived from your `MASTER_PASSWORD` in `.env`.
 2. **Never commit `.env`**: It contains your master password
 3. **Use unique passwords**: Don't reuse passwords across accounts
 4. **Enable 2FA where possible**: On your social media accounts
-5. **Regular backups**: Backup `.agents/` folder regularly
+5. **Regular backups**: Backup `.src/` folder regularly
 6. **Monitor for suspicious activity**: Check your accounts regularly
 
 ### Data Storage
 
-Agent configurations are stored in `.agents/*.json` with this structure:
+Agent configurations are stored in `.src/*.json` with this structure:
 
 ```json
 {
@@ -585,18 +585,18 @@ poetry run pytest tests/test_agent.py
 
 ```bash
 # Format code with Black
-poetry run black agents/
+poetry run black src/
 
 # Lint with Ruff
-poetry run ruff check agents/
+poetry run ruff check src/
 
 # Type checking with mypy
-poetry run mypy agents/
+poetry run mypy src/
 ```
 
 ### Adding a New Platform
 
-1. Create `agents/platforms/newplatform.py`
+1. Create `src/platforms/newplatform.py`
 2. Implement the `Platform` interface:
 
    ```python
@@ -616,7 +616,7 @@ poetry run mypy agents/
            pass
    ```
 
-3. Register in `agents/platforms/__init__.py`
+3. Register in `src/platforms/__init__.py`
 4. Add tests in `tests/test_platforms.py`
 5. Update documentation
 
@@ -697,8 +697,8 @@ Thank you to all contributors! 🎉
 ### Need Help?
 
 - 📖 Read the [Documentation](docs/)
-- 🐛 Report bugs in [Issues](https://github.com/alexcolls/.agents/issues)
-- 💬 Ask questions in [Discussions](https://github.com/alexcolls/.agents/discussions)
+- 🐛 Report bugs in [Issues](https://github.com/alexcolls/.src/issues)
+- 💬 Ask questions in [Discussions](https://github.com/alexcolls/.src/discussions)
 - ⭐ Star this repo if you find it useful!
 
 ### FAQ

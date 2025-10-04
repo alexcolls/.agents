@@ -119,16 +119,16 @@ We use automated tools to maintain code quality:
 
 ```bash
 # Format code with Black
-poetry run black agents/
+poetry run black src/
 
 # Lint with Ruff
-poetry run ruff check agents/
+poetry run ruff check src/
 
 # Type check with mypy
-poetry run mypy agents/
+poetry run mypy src/
 
 # Run all checks
-poetry run black agents/ && poetry run ruff check agents/ && poetry run mypy agents/
+poetry run black src/ && poetry run ruff check src/ && poetry run mypy src/
 ```
 
 **Code Standards:**
@@ -334,7 +334,7 @@ We especially welcome contributions in these areas:
 
 ### Project Structure
 ```
-agents/
+src/
 ├── cli/          # Command-line interface
 ├── core/         # Core business logic
 ├── platforms/    # Social media integrations
@@ -343,10 +343,10 @@ agents/
 ```
 
 ### Key Files
-- `agents/cli/main.py` - CLI entry point
-- `agents/core/agent.py` - Agent management
-- `agents/platforms/instagram.py` - Instagram integration
-- `agents/security/encryption.py` - Credential encryption
+- `src/cli/main.py` - CLI entry point
+- `src/core/agent.py` - Agent management
+- `src/platforms/instagram.py` - Instagram integration
+- `src/security/encryption.py` - Credential encryption
 
 ### Useful Commands
 ```bash
@@ -357,7 +357,7 @@ poetry run black .
 poetry run ruff check .
 
 # Type check
-poetry run mypy agents/
+poetry run mypy src/
 
 # Run all tests with coverage
 poetry run pytest --cov=agents --cov-report=term-missing
@@ -373,8 +373,8 @@ By contributing, you agree that your contributions will be licensed under the MI
 ## 💬 Questions?
 
 - 📖 Read the [Documentation](docs/)
-- 🐛 Check [existing issues](https://github.com/alexcolls/.agents/issues)
-- 💬 Start a [discussion](https://github.com/alexcolls/.agents/discussions)
+- 🐛 Check [existing issues](https://github.com/alexcolls/.src/issues)
+- 💬 Start a [discussion](https://github.com/alexcolls/.src/discussions)
 - 📧 Email: alex@example.com
 
 ## 🙏 Thank You!

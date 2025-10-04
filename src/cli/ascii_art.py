@@ -10,7 +10,7 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.text import Text
 
-from agents.utils.constants import PROJECT_NAME, VERSION
+from src.utils.constants import PROJECT_NAME, VERSION
 
 
 # Main application logo - Clean and modern

@@ -9,7 +9,7 @@ __author__ = "Alex Colls Outumuro"
 __email__ = "alex@example.com"
 __license__ = "MIT"
 
-from agents.utils.config import Config
-from agents.utils.logger import setup_logger
+from src.utils.config import Config
+from src.utils.logger import setup_logger
 
 __all__ = ["Config", "setup_logger", "__version__"]

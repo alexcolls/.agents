@@ -15,7 +15,7 @@ from typing import Optional
 from rich.console import Console
 from rich.logging import RichHandler
 
-from agents.utils.constants import PROJECT_NAME
+from src.utils.constants import PROJECT_NAME
 
 
 class JsonFormatter(logging.Formatter):
@@ -186,7 +186,7 @@ def get_logger(name: str) -> logging.Logger:
         
     Examples:
         >>> # In your module
-        >>> from agents.utils.logger import get_logger
+        >>> from src.utils.logger import get_logger
         >>> logger = get_logger(__name__)
         >>> logger.info("Processing started")
     """

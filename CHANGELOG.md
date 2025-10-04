@@ -45,6 +45,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 🏷️ Rebranded project to `.agents` for cleaner naming
 - 📝 Updated all documentation and repository references
 - 🔧 Updated git remote to point to new repository URL
+- 📁 Renamed `agents/` directory to `src/` for cleaner structure
+- 🔄 Updated all imports from `agents.` to `src.`
+- 📋 Updated pyproject.toml entry point to use `src.cli.main:main`
+- 📚 Updated all documentation references to use src/ path
 
 ### Planned Features
 - 📱 TikTok platform integration
@@ -84,13 +88,13 @@ This is the first alpha release of WhatsApp Video to Social Media Agent. The pro
 - 📜 Created CHANGELOG.md to track all project changes
 
 #### Directory Structure
-- 📁 `agents/` - Main application package
+- 📁 `src/` - Main application package
   - `cli/` - Command-line interface components
   - `core/` - Core business logic
   - `platforms/` - Platform integrations
   - `security/` - Encryption and security utilities
   - `utils/` - Utility functions
-- 📁 `.agents/` - Agent storage directory (git-ignored)
+- 📁 `.src/` - Agent storage directory (git-ignored)
   - `tmp/` - Temporary video downloads
   - `build/` - Docker image builds
 - 📁 `tests/` - Test suite directory
@@ -134,7 +138,7 @@ This is the first alpha release of WhatsApp Video to Social Media Agent. The pro
 ### 🔒 Security
 - ✅ AES-256 encryption for all credentials
 - ✅ Master password-based key derivation
-- ✅ Secure credential storage in `.agents/*.json`
+- ✅ Secure credential storage in `.src/*.json`
 - ✅ Environment variable protection via .gitignore
 - ✅ Clear security warnings in documentation
 
@@ -169,7 +173,7 @@ We welcome contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for det
 ## Links
 
 - **Repository**: https://github.com/alexcolls/.agents
-- **Issue Tracker**: https://github.com/alexcolls/.agents/issues
+- **Issue Tracker**: https://github.com/alexcolls/.src/issues
 - **Documentation**: [docs/](docs/)
 
 ---

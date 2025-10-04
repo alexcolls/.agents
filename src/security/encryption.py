@@ -14,8 +14,8 @@ from cryptography.fernet import Fernet, InvalidToken
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2
 
-from agents.utils.constants import ENCRYPTION_ALGORITHM, ErrorMessages
-from agents.utils.logger import get_logger
+from src.utils.constants import ENCRYPTION_ALGORITHM, ErrorMessages
+from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
 
@@ -350,7 +350,7 @@ def get_encryptor(master_password: Optional[str] = None) -> Encryptor:
         if master_password is None:
             # Try to get from config
             try:
-                from agents.utils.config import get_config
+                from src.utils.config import get_config
                 config = get_config()
                 master_password = config.master_password
             except Exception as e:

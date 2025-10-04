@@ -10,7 +10,7 @@ from typing import Any, Optional
 
 from dotenv import load_dotenv
 
-from agents.utils.constants import (
+from src.utils.constants import (
     BASE_DIR,
     DEFAULT_CHECK_INTERVAL_MINUTES,
     DEFAULT_INSTAGRAM_REQUEST_DELAY,

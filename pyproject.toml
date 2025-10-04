@@ -42,7 +42,7 @@ pre-commit = "^3.6.0"
 ipython = "^8.20.0"
 
 [tool.poetry.scripts]
-agents = "agents.cli.main:main"
+agents = "src.cli.main:main"
 
 [tool.black]
 line-length = 100

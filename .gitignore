@@ -211,8 +211,8 @@ __marimo__/
 # ============================================================================
 
 # Agent storage directory (contains encrypted credentials and temp files)
-.agents/
-!.agents/.gitkeep
+.src/
+!.src/.gitkeep
 
 # Environment configuration (contains secrets)
 .env
@@ -247,7 +247,7 @@ downloads/
 *.sqlite3
 
 # Docker build artifacts
-.agents/build/
+.src/build/
 *.tar
 
 # Poetry local config

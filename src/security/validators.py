@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Optional
 from urllib.parse import urlparse
 
-from agents.utils.constants import (
+from src.utils.constants import (
     EMAIL_PATTERN,
     PLATFORM_EMOJIS,
     SUPPORTED_PLATFORMS,
@@ -17,7 +17,7 @@ from agents.utils.constants import (
     USERNAME_PATTERN,
     VIDEO_URL_PATTERNS,
 )
-from agents.utils.logger import get_logger
+from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
 

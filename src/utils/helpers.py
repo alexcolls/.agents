@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Any, Optional
 from urllib.parse import urlparse
 
-from agents.utils.constants import (
+from src.utils.constants import (
     EMAIL_PATTERN,
     GENERATED_PASSWORD_CHARS,
     GENERATED_PASSWORD_LENGTH,
