@@ -12,7 +12,7 @@ from typing import Any, Optional
 
 from cryptography.fernet import Fernet, InvalidToken
 from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
 from src.utils.constants import ENCRYPTION_ALGORITHM, ErrorMessages
 from src.utils.logger import get_logger
@@ -69,7 +69,7 @@ class Encryptor:
         only derived from the password when needed.
         """
         # Derive key using PBKDF2
-        kdf = PBKDF2(
+        kdf = PBKDF2HMAC(
             algorithm=hashes.SHA256(),
             length=32,  # 256 bits for AES-256
             salt=self.SALT,

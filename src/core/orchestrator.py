@@ -25,7 +25,7 @@ from src.platforms.whatsapp import WhatsAppMonitor, WhatsAppMessage
 from src.platforms.instagram import InstagramClient, PostResult
 from src.utils.config import get_config
 from src.utils.logger import get_logger, LoggerMixin
-from src.security.encryption import EncryptionManager
+from src.security.encryption import Encryptor
 
 
 logger = get_logger(__name__)
@@ -62,7 +62,7 @@ class AgentOrchestrator(LoggerMixin):
     def __init__(
         self,
         agent: Agent,
-        encryption_manager: Optional[EncryptionManager] = None,
+        encryption_manager: Optional[Encryptor] = None,
     ):
         """
         Initialize orchestrator
@@ -430,7 +430,7 @@ class AgentOrchestrator(LoggerMixin):
 
 def run_agent(
     agent: Agent,
-    encryption_manager: Optional[EncryptionManager] = None,
+    encryption_manager: Optional[Encryptor] = None,
 ) -> AgentOrchestrator:
     """
     Quick function to run agent

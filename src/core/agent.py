@@ -25,9 +25,9 @@ from dataclasses import dataclass, field, asdict
 
 from src.utils.config import get_config
 from src.utils.logger import get_logger, LoggerMixin
-from src.utils.helpers import generate_secure_password, sanitize_filename
+from src.utils.helpers import generate_password, sanitize_filename
 from src.utils.validators import validate_agent_name, validate_platform
-from src.security.encryption import EncryptionManager
+from src.security.encryption import Encryptor
 from src.security.validators import sanitize_path
 
 
@@ -97,7 +97,7 @@ class Agent(LoggerMixin):
     def __init__(
         self,
         config: AgentConfig,
-        encryption_manager: Optional[EncryptionManager] = None,
+        encryption_manager: Optional[Encryptor] = None,
     ):
         """
         Initialize agent
@@ -279,7 +279,7 @@ class Agent(LoggerMixin):
     def from_dict(
         cls,
         data: Dict[str, Any],
-        encryption_manager: Optional[EncryptionManager] = None,
+        encryption_manager: Optional[Encryptor] = None,
     ) -> "Agent":
         """
         Create agent from dictionary
@@ -318,7 +318,7 @@ class AgentManager(LoggerMixin):
     def __init__(
         self,
         storage_dir: Optional[Path] = None,
-        encryption_manager: Optional[EncryptionManager] = None,
+        encryption_manager: Optional[Encryptor] = None,
     ):
         """
         Initialize agent manager
@@ -524,7 +524,7 @@ class AgentManager(LoggerMixin):
 
 def create_agent_from_form_data(
     form_data: Dict[str, Any],
-    encryption_manager: Optional[EncryptionManager] = None,
+    encryption_manager: Optional[Encryptor] = None,
 ) -> Agent:
     """
     Create agent from menu form data

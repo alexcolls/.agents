@@ -9,7 +9,7 @@ from typing import Optional
 
 from src.core.agent import AgentManager, AgentConfig, create_agent_from_form_data
 from src.core.orchestrator import AgentOrchestrator
-from src.security.encryption import EncryptionManager
+from src.security.encryption import Encryptor
 from src.cli.theme import get_console, status_icon, platform_icon
 from src.cli.menu import agent_form, select_agent, confirm
 from src.utils.config import get_config

@@ -5,7 +5,7 @@ Tests for security modules (encryption and validators)
 import pytest
 from pathlib import Path
 
-from src.security.encryption import EncryptionManager
+from src.security.encryption import Encryptor
 from src.security.validators import (
     validate_agent_name,
     validate_username,
@@ -23,13 +23,13 @@ class TestEncryption:
     """Test encryption functionality"""
     
     def test_encryption_manager_init(self):
-        """Test EncryptionManager initialization"""
-        manager = EncryptionManager("test_password_123")
+        """Test Encryptor initialization"""
+        manager = Encryptor("test_password_123")
         assert manager is not None
     
     def test_encrypt_decrypt_string(self):
         """Test string encryption and decryption"""
-        manager = EncryptionManager("test_password_123")
+        manager = Encryptor("test_password_123")
         original = "secret_data"
         
         encrypted = manager.encrypt_string(original)
@@ -40,7 +40,7 @@ class TestEncryption:
     
     def test_encrypt_decrypt_dict(self):
         """Test dictionary encryption and decryption"""
-        manager = EncryptionManager("test_password_123")
+        manager = Encryptor("test_password_123")
         original = {"key": "value", "number": 42}
         
         encrypted = manager.encrypt_dict(original)
@@ -51,7 +51,7 @@ class TestEncryption:
     
     def test_encrypt_decrypt_credentials(self):
         """Test credentials encryption"""
-        manager = EncryptionManager("test_password_123")
+        manager = Encryptor("test_password_123")
         credentials = {
             "username": "testuser",
             "password": "testpass123"
@@ -65,7 +65,7 @@ class TestEncryption:
     
     def test_password_hashing(self):
         """Test password hash generation and verification"""
-        manager = EncryptionManager("test_password_123")
+        manager = Encryptor("test_password_123")
         password = "mypassword"
         
         hash1 = manager.hash_password(password)
@@ -80,7 +80,7 @@ class TestEncryption:
     
     def test_wrong_password_fails_verification(self):
         """Test wrong password fails verification"""
-        manager = EncryptionManager("test_password_123")
+        manager = Encryptor("test_password_123")
         password = "correct_password"
         wrong = "wrong_password"
         
@@ -206,7 +206,7 @@ class TestSecuritySmokeTests:
     def test_encryption_module_importable(self):
         """Test encryption module can be imported"""
         from src.security import encryption
-        assert hasattr(encryption, 'EncryptionManager')
+        assert hasattr(encryption, 'Encryptor')
     
     def test_validators_module_importable(self):
         """Test validators module can be imported"""
