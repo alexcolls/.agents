@@ -147,6 +147,39 @@ STATUS_ICONS = {
 }
 
 
+class AgentsLogo:
+    """Class to manage and display the .agents logo."""
+    
+    def __init__(self, style: str = "default"):
+        """
+        Initialize the logo.
+        
+        Args:
+            style: Logo style ('default', 'compact', 'minimal')
+        """
+        self.style = style
+    
+    def get_logo(self) -> Text:
+        """
+        Get the logo as a Rich Text object.
+        
+        Returns:
+            Rich Text object with styled logo
+        """
+        if self.style == "compact":
+            logo_text = LOGO_COMPACT
+        elif self.style == "minimal":
+            logo_text = LOGO_MINIMAL
+        else:
+            logo_text = LOGO
+        
+        text = Text(logo_text)
+        text.stylize("bold cyan")
+        text.append("\n")
+        text.append(f"v{VERSION} • Social Media Automation", style="dim cyan")
+        return text
+
+
 def print_logo(console: Optional[Console] = None, style: str = "default") -> None:
     """
     Print the application logo.
