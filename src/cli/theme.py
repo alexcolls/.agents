@@ -329,7 +329,9 @@ class ThemedConsole:
     
     def rule(self, title: Optional[str] = None, **kwargs):
         """Print horizontal rule with optional title"""
-        self.console.rule(title, style=self.theme.primary, **kwargs)
+        if 'style' not in kwargs:
+            kwargs['style'] = self.theme.primary
+        self.console.rule(title, **kwargs)
     
     def clear(self):
         """Clear console"""
