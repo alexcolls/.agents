@@ -20,28 +20,23 @@ from pathlib import Path
 import questionary
 from questionary import Style
 
-from src.utils.constants import SUPPORTED_PLATFORMS, Messages
-from src.utils.validators import (
-    validate_agent_name,
-    validate_username,
-    validate_password,
-    validate_platform,
-)
+from src.utils.constants import SUPPORTED_PLATFORMS
+from src.security.validators import InputValidator
 from src.cli.theme import ThemeColors
 
 
 # Custom questionary style matching our retro theme
 RETRO_STYLE = Style([
-    ('qmark', f'fg:{ThemeColors.NEON_BLUE} bold'),           # Question mark
-    ('question', f'fg:{ThemeColors.NEON_PINK} bold'),        # Question text
-    ('answer', f'fg:{ThemeColors.SUCCESS} bold'),            # Answer text
-    ('pointer', f'fg:{ThemeColors.RETRO_AMBER} bold'),       # Selection pointer
-    ('highlighted', f'fg:{ThemeColors.NEON_BLUE} bold'),     # Highlighted option
-    ('selected', f'fg:{ThemeColors.SUCCESS}'),               # Selected items
-    ('separator', f'fg:{ThemeColors.MUTED}'),                # Separators
-    ('instruction', f'fg:{ThemeColors.INFO}'),               # Instructions
-    ('text', f'fg:{ThemeColors.PRIMARY}'),                   # Regular text
-    ('disabled', f'fg:{ThemeColors.MUTED} italic'),          # Disabled options
+    ('qmark', 'fg:cyan bold'),           # Question mark
+    ('question', 'fg:magenta bold'),     # Question text
+    ('answer', 'fg:green bold'),         # Answer text
+    ('pointer', 'fg:yellow bold'),       # Selection pointer
+    ('highlighted', 'fg:cyan bold'),     # Highlighted option
+    ('selected', 'fg:green'),            # Selected items
+    ('separator', 'fg:white'),           # Separators
+    ('instruction', 'fg:blue'),          # Instructions
+    ('text', 'fg:cyan'),                 # Regular text
+    ('disabled', 'fg:white italic'),     # Disabled options
 ])
 
 

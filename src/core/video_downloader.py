@@ -25,8 +25,8 @@ import yt_dlp
 
 from src.utils.config import get_config
 from src.utils.logger import get_logger, LoggerMixin
-from src.utils.helpers import sanitize_filename, format_file_size
-from src.utils.validators import validate_url, validate_video_file
+from src.utils.helpers import sanitize_filename, format_size
+from src.security.validators import InputValidator
 
 
 logger = get_logger(__name__)

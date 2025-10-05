@@ -24,11 +24,11 @@ from datetime import datetime
 from dataclasses import dataclass, field, asdict
 
 from src.utils.config import get_config
+from src.utils.constants import AGENTS_DIR
 from src.utils.logger import get_logger, LoggerMixin
 from src.utils.helpers import generate_password, sanitize_filename
-from src.utils.validators import validate_agent_name, validate_platform
+from src.security.validators import InputValidator
 from src.security.encryption import Encryptor
-from src.security.validators import sanitize_path
 
 
 logger = get_logger(__name__)
@@ -124,12 +124,16 @@ class Agent(LoggerMixin):
     
     def _validate_config(self):
         """Validate agent configuration"""
-        if not validate_agent_name(self.config.name):
-            raise ValueError(f"Invalid agent name: {self.config.name}")
+        try:
+            InputValidator.validate_agent_name(self.config.name)
+        except Exception as e:
+            raise ValueError(f"Invalid agent name: {self.config.name} - {e}")
         
         for platform in self.config.platforms.keys():
-            if not validate_platform(platform):
-                raise ValueError(f"Invalid platform: {platform}")
+            try:
+                InputValidator.validate_platform(platform)
+            except Exception as e:
+                raise ValueError(f"Invalid platform: {platform} - {e}")
     
     @property
     def name(self) -> str:
@@ -179,8 +183,10 @@ class Agent(LoggerMixin):
             username: Username
             password: Password
         """
-        if not validate_platform(platform):
-            raise ValueError(f"Invalid platform: {platform}")
+        try:
+            InputValidator.validate_platform(platform)
+        except Exception as e:
+            raise ValueError(f"Invalid platform: {platform} - {e}")
         
         credentials = {
             "username": username,
@@ -327,9 +333,7 @@ class AgentManager(LoggerMixin):
             storage_dir: Directory to store agent files
             encryption_manager: Encryption manager for credentials
         """
-        config = get_config()
-        
-        self.storage_dir = storage_dir or Path(config.AGENTS_DIR)
+        self.storage_dir = storage_dir or AGENTS_DIR
         self.storage_dir.mkdir(parents=True, exist_ok=True)
         
         self.encryption_manager = encryption_manager

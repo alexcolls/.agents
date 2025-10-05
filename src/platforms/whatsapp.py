@@ -29,7 +29,7 @@ from enum import Enum
 from src.utils.config import get_config
 from src.utils.logger import get_logger, LoggerMixin
 from src.utils.helpers import extract_video_urls
-from src.utils.validators import validate_url
+from src.security.validators import InputValidator
 
 
 logger = get_logger(__name__)
