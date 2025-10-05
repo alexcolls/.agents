@@ -201,6 +201,8 @@ class LoggerMixin:
         class MyClass(LoggerMixin):
             def do_something(self):
                 self.logger.info("Doing something")
+                # Or use convenience methods:
+                self.log_info("Doing something")
     """
     
     @property
@@ -209,6 +211,26 @@ class LoggerMixin:
         if not hasattr(self, "_logger"):
             self._logger = get_logger(self.__class__.__name__)
         return self._logger
+    
+    def log_debug(self, message: str) -> None:
+        """Log debug message."""
+        self.logger.debug(message)
+    
+    def log_info(self, message: str) -> None:
+        """Log info message."""
+        self.logger.info(message)
+    
+    def log_warning(self, message: str) -> None:
+        """Log warning message."""
+        self.logger.warning(message)
+    
+    def log_error(self, message: str, exc_info: bool = True) -> None:
+        """Log error message."""
+        self.logger.error(message, exc_info=exc_info)
+    
+    def log_critical(self, message: str) -> None:
+        """Log critical message."""
+        self.logger.critical(message)
 
 
 # Convenience functions for quick logging
